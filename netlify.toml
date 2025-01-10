@@ -1,15 +1,14 @@
-# This is the build section where you define the build command and the publish directory.
-
+# Build section: Defines the build command and the directory to publish
 [build]
-  # The command to build the app
+  # The command to build the app (ensure you have a build script defined in package.json)
   command = "npm run build"
 
-  # The directory to publish after building the app
+  # The directory that contains the built app files
   publish = "dist"
 
 # Optional: Set environment variables if necessary for your build
 [build.environment]
-  NODE_VERSION = "16"  # Adjust this to the Node version you need
+  NODE_VERSION = "20"  # Use the correct Node version as per your setup (replace 16 with 20)
 
 # Optional: Handle client-side routing for SPAs (Single Page Apps)
 [[redirects]]
