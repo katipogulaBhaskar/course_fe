@@ -12,7 +12,6 @@ const Login = ({ setIsLoggedIn }) => {
         e.preventDefault();
         try {
             const response = await API.post("/loginUser", formData);
-           // localStorage.setItem("userToken", response.data.token);
             setIsLoggedIn(true);  // Set the isLoggedIn state to true
             window.alert("Login successful!");
             navigate("/enroll");
@@ -44,6 +43,10 @@ const Login = ({ setIsLoggedIn }) => {
                 <Text>
                     Don't have an account?{" "}
                     <Link onClick={() => navigate("/signup")}>Signup here</Link>
+                </Text>
+                {/* Changed the text to 'Reset Password' */}
+                <Text>
+                    <Link onClick={() => navigate("/reset-request")}>Reset Password</Link>
                 </Text>
             </Card>
         </Container>
