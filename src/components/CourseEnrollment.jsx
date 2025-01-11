@@ -103,7 +103,7 @@ const CourseForm = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     alert("You have logged out successfully.");
-    navigate("/login");
+    navigate("/");
   };
 
   // Fetch courses when the component mounts
