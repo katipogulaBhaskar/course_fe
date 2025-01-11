@@ -10,7 +10,7 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                {/* Default route set to Login */}
+                <Route path="/" element={<Login />} /> {/* Default route */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/reset-request" element={<ResetPasswordRequest />} />
