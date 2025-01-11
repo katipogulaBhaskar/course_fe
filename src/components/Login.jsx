@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import API from "../api";
 import styled from "styled-components"; // Import styled-components
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
     const [formData, setFormData] = useState({ email: "", password: "" });
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
@@ -12,7 +12,8 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await API.post("/loginUser", formData);
-            localStorage.setItem("userToken", response.data.token);
+           // localStorage.setItem("userToken", response.data.token);
+            setIsLoggedIn(true);  // Set the isLoggedIn state to true
             window.alert("Login successful!");
             navigate("/enroll");
         } catch (error) {
