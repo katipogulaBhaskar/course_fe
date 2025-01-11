@@ -24,7 +24,7 @@ const ResetPassword = () => {
             window.alert(response.data.message);  // Set the success message from backend response
             // Redirect to login page after successful reset
             setTimeout(() => {
-                navigate("/login");
+                navigate("/");
             }, 2000); // Redirect after 2 seconds for user to see the message
         } catch (error) {
             setMessage(error.response?.data?.message || "Error resetting password.");
