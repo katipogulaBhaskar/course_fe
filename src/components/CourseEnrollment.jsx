@@ -24,7 +24,7 @@ const CourseForm = () => {
       if (editCourse) {
         // Update existing course
         const response = await axios.put(
-          `http://localhost:5000/api/update-course/${editCourse._id}`,
+          `https://course-be-ita7.onrender.com/api/update-course/${editCourse._id}`,
           course
         );
         if (response.data.message === "Book updated successfully") {
@@ -36,7 +36,7 @@ const CourseForm = () => {
       } else {
         // Add new course
         const response = await axios.post(
-          "http://localhost:5000/api/enroll-course",
+          "https://course-be-ita7.onrender.com/api/enroll-course",
           course
         );
         if (response.data.message === "Book added successfully") {
@@ -61,7 +61,7 @@ const CourseForm = () => {
   const fetchAllCourses = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/enrolled-courses");
+      const response = await axios.get("https://course-be-ita7.onrender.com/api/enrolled-courses");
       setCourses(response.data);
       setShowCourses(true);
     } catch (err) {
@@ -83,7 +83,7 @@ const CourseForm = () => {
     if (window.confirm("Are you sure you want to delete this course?")) {
       setLoading(true);
       try {
-        const response = await axios.delete(`http://localhost:5000/api/delete-course/${courseId}`);
+        const response = await axios.delete(`https://course-be-ita7.onrender.com/api/delete-course/${courseId}`);
         if (response.data.message === "Book deleted successfully") {
           alert("Course deleted successfully!");
           fetchAllCourses();
